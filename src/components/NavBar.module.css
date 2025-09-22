@@ -1,0 +1,24 @@
+.container {
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ height: 14vh;
+ margin: 15px;
+
+}
+
+.link {
+ margin: 0 20px;
+ font-size: 5vh;
+ height: 8vh;
+ color: white;
+ padding: 0.5vw 2vw 0.5vw 2vw;
+ text-shadow: hsl(295, 100%, 76%) 0px 0px 14px;
+ border: 3px hsl(295, 100%, 76%) solid;
+ box-shadow: hsl(295, 100%, 76%) 0px 0px 24px;
+}
+
+.link:hover {
+ color: hsl(295, 100%, 84%);
+ text-shadow: white 0px 0px 24px;
+}
