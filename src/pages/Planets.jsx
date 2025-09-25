@@ -1,4 +1,4 @@
-function Planets(planets) {
+function Planets({planets}) {
 console.log('planets', planets);
     return (
         <div>
