@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage';
 import Planets from './pages/Planets';
 import Spacecrafts from './pages/Spacecrafts';
+import SpacecraftForm from './components/SpacecraftForm';
 
 import SpaceTravelApi from './services/SpaceTravelApi.js';
 
@@ -14,6 +15,7 @@ import styles from "./App.module.css";
 
 
 function App() {
+  //Usestate variables
   const [planets, setPlanets] = useState([]);
   const [spacecrafts, setSpacecrafts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -21,6 +23,7 @@ function App() {
 
   // const api = new SpaceTravelApi();
 
+  //fetching all planets & data
   useEffect(() => {
     console.log('anybody there?');
     const getPlanets = async () => {
@@ -35,6 +38,7 @@ function App() {
     getPlanets();
   }, []);
 
+  //fetching all spacecerafts & data
   useEffect(() => {
     const getSpacecrafts = async () => {
       try {
@@ -52,12 +56,14 @@ function App() {
 
   return (
     <div className={styles.main}>
+      {/* covering the whole page in the react router */}
       <BrowserRouter>
         <NavBar/>
         <Routes>
           <Route path='/' element={<HomePage />}/>
-          <Route path='/Planets' element={<Planets planets={planets}/>}/>
+          <Route path='/Planets' element={<Planets planets={planets} spacecrafts={spacecrafts}/>}/>
           <Route path='/Spacecrafts' element={<Spacecrafts spacecrafts={spacecrafts}/>}/>
+          <Route path='/SpaceCraftForm' element={<SpacecraftForm />}/>
         </Routes>
       </BrowserRouter>
     </div>

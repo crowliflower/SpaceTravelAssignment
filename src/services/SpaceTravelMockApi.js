@@ -179,6 +179,7 @@ class SpaceTravelMockApi
 
   static async buildSpacecraft ({name, capacity, description, pictureUrl = undefined})
   {
+    // console.log('build api test', name, capacity, description, pictureUrl)
     await SpaceTravelMockApi.wait();
 
     const response = SpaceTravelMockApi.prepareResponse();
